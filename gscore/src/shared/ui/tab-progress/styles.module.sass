@@ -1,0 +1,27 @@
+@import '@/app/styles/_variables.sass'
+
+.tabs
+    display: flex
+    flex-direction: row
+    gap: 16px
+    width: 100%
+
+    .tab
+        display: flex
+        flex-direction: column
+        gap: 10px
+        flex: 1
+
+        .title
+            text-align: left
+            color: $neutral-100
+            font-size: $fs-20
+            line-height: $fs-22
+            font-weight: $fw-semi-bold
+        .progress
+            background-color: $neutral-600
+            border-radius: 50vw
+            height: 8px
+    & > .tillTabCurrent ~ .tab, .tillTabCurrent
+        .progress
+            background-color: $primary-1

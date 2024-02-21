@@ -1,0 +1,52 @@
+@import '@/app/styles/_variables.sass'
+
+.footer
+    width: 100%
+
+    font-family: $ff-inter
+    background-color: $neutral-800
+    padding: 60px 0 42px
+    border-top: 1px solid $neutral-600
+
+    .description
+        width: 322px
+        margin-bottom: 60px
+        .logo
+            margin-bottom: 24px
+
+        .subtitle
+            color: $neutral-400
+            font-size: $fs-18
+            line-height: $fs-30
+            font-weight: $fw-medium
+    .bottom
+        border-top: 1px solid $neutral-600
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+        padding-top: 42px
+        .copyright
+            color: $neutral-400
+            font-size: $fs-18
+            line-height: $fs-30
+            font-weight: $fw-medium
+            margin: 0
+            .link
+                text-decoration: underline
+                color: $neutral-100
+
+        .socialMedia
+            display: flex
+            align-items: center
+            gap: 11px
+
+            .iconMedia
+                color: $neutral-100
+                cursor: pointer
+                padding: 5px
+                transition: all 0.2s ease-in-out
+
+                &:hover
+                    box-shadow: inset 0px 0px 6px 4px rgba(255, 255, 255, 0.2)
+                    border-radius: 50%

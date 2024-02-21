@@ -1,0 +1,58 @@
+@import '@/app/styles/_variables.sass'
+
+.field
+
+    width: 420px
+
+    .inputBlock:has(.input:focus::enabled)
+        border-color: $neutral-500
+    .inputBlock
+        background-color: $neutral-100
+        box-shadow: 0 2px 12px 0 rgba(20, 20, 43, 0.06)
+        padding: 0 23px
+        border-radius: 6px
+        border: 1px solid $neutral-300
+
+        height: 68px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        gap: 5px
+
+        &.success
+            border-color: $system-green-300
+        &.error
+            border-color: $system-red-300
+        &.disabledBlock
+            cursor: not-allowed
+        .input
+            flex: 1
+            pointer-events: auto
+            font-family: "Inter", sans-serif
+            border: none
+            outline: none
+            color: $neutral-600
+            font-size: $fs-16
+            font-weight: $fw-medium
+            background-color: inherit
+            &::placeholder
+                color: $neutral-500
+            &:disabled
+                opacity: 70%
+                cursor: not-allowed
+
+        .icon
+            .successIcon
+                color: $system-green-300
+            .errorIcon
+                color: $system-red-300
+
+    .errorMessage
+        visibility: hidden
+        color: $system-red-300
+        font-size: $fs-14
+        font-weight: $fw-medium
+        line-height: $fs-16
+    .hideErrorMessage
+        visibility: visible

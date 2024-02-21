@@ -1,0 +1,33 @@
+@import '@/app/styles/_variables.sass'
+
+.tabs
+    width: 100%
+    overflow-x: auto
+    overflow-y: hidden
+    .listTabs
+        display: flex
+
+        list-style-type: none
+        margin: 0
+        padding: 0
+        border-bottom: 2px solid $neutral-600
+        .tab
+            cursor: pointer
+            padding: 12px 24px
+            color: $neutral-600
+            font-size: $fs-18
+            font-weight: $fw-bold
+            line-height: $fs-20
+        .activeTab
+            color: $primary-1
+            position: relative
+
+            &::after
+                content: ""
+                position: absolute
+                width: 100%
+                height: 2px
+                background-color: $primary-1
+                bottom: -2px
+                left: 0
+                display: block
