@@ -1,0 +1,80 @@
+@import '@/app/styles/_variables.sass'
+
+.checkBlock
+    position: relative
+    cursor: pointer
+    width: 28px
+    height: 28px
+
+    .checkIcon
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        color: $neutral-100
+        pointer-events: none
+
+    input
+        position: absolute
+        z-index: -2
+        opacity: 0
+
+    .checkmark::before
+        content: ''
+        display: inline-block
+        box-sizing: border-box
+        width: 100%
+        height: 100%
+        border: 1px solid $neutral-400
+        border-radius: 7px
+        transition: all 0.1s ease-in-out
+
+    //only not checked
+    input:not(:checked)+.checkmark::before
+        box-shadow: 0px 2px 6px 0px rgba(20,20,43, 0.06)
+
+    //default styles checked/not checked and not disabled
+    input:not(:disabled):not(:checked)+.checkmark::before
+        background-color: $neutral-100
+        border-color: $neutral-400
+
+    input:not(:disabled):checked+.checkmark::before
+        background-color: $primary-1
+        border-color: $primary-1
+
+    // just hover checked/not checked
+    input:not(:disabled):not(:checked)+.checkmark:hover::before
+        background-color: $neutral-400
+    input:not(:disabled):checked+.checkmark:hover::before
+        background-color: $system-red-400
+        border-color: $system-red-400
+
+    // disabled checked/not checked
+    input:disabled:not(:checked)+.checkmark::before
+        opacity: 70%
+        background-color: $neutral-100
+        border-color: $neutral-400
+
+    input:disabled:checked+.checkmark::before
+        opacity: 70%
+        background-color: $system-red-400
+        border-color: $system-red-400
+
+    // when checked/not checked for focus 
+    input:not(:disabled):not(:checked):focus+.checkmark::before
+        background-color: $neutral-100
+        border-color: $neutral-100
+        outline: 4px solid $neutral-400-op-30
+    input:not(:disabled):checked:focus+.checkmark::before
+        background-color: $primary-1
+        border-color: $primary-1
+        outline: 4px solid $primary-1-op-30
+
+    // when checked/not checked for focus hover
+    input:not(:disabled):checked:focus+.checkmark:hover::before
+        background-color: $system-red-400
+        border-color: $system-red-400
+
+    input:not(:disabled):not(:checked):focus+.checkmark:hover::before
+        background-color: $neutral-400
+        border-color: $neutral-400

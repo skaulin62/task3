@@ -1,0 +1,91 @@
+@import '@/app/styles/_variables.sass'
+
+.shadow
+    box-shadow: 0px 10px 28px 0px $primary-1-op-20
+
+.button.locked.primary
+    cursor: wait
+    &:hover:enabled, &:active:enabled, &:focus:enabled
+        outline: none
+        background-color: $primary-1
+        color: $neutral-100
+
+.button.locked.secondary
+    cursor: wait
+    &:hover:enabled, &:active:enabled, &:focus:enabled
+        outline: none
+        color: $primary-1
+
+.button.locked.text
+    cursor: wait
+    &:hover:enabled, &:active:enabled, &:focus:enabled
+        color: $primary-1
+
+.button:disabled.locked
+    cursor: wait
+
+.button
+    border: none
+    outline: none
+    font-size: $fs-18
+    font-weight: $fw-bold
+    cursor: pointer
+    border-radius: 4px
+    position: relative
+    .hideText
+        visibility: hidden
+    .loading
+        display: flex
+        align-items: center
+        justify-content: center
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+
+    &:disabled
+        opacity: 70%
+        cursor: not-allowed
+
+.smallest
+    height: 58px
+    padding: 0 24px
+    font-size: $fs-18
+.biggest
+    height: 72px
+    padding: 0 48px
+    font-size: $fs-20
+    border-radius: 6px
+
+.primary
+    color: $neutral-100
+    background-color: $primary-1
+
+    &:hover:enabled
+        background-color: $system-red-400
+    &:focus:enabled
+        outline: 4px solid $primary-1-op-30
+    &:active:enabled
+        color: $neutral-100
+        background-color: $primary-1
+        outline: none
+
+.secondary
+    background-color: $neutral-100
+    color: $primary-1
+
+    &:hover:enabled
+        color: $system-red-400
+    &:focus:enabled
+        outline: 4px solid $neutral-100-op-30
+    &:active:enabled
+        background-color: $neutral-100
+        color: $primary-1
+        outline: none
+
+.text
+    color: $primary-1
+    height: auto
+    background-color: transparent
+    &:hover:enabled
+        color: $system-red-400
