@@ -3,12 +3,15 @@ import clsx from "clsx";
 import React, { ButtonHTMLAttributes, FC } from "react";
 import Loading from "@/shared/assets/icons/loader.svg";
 
+type TypeVarianButton = "primary" | "secondary" | "text";
+type TypeScaleButton = "smallest" | "biggest";
+
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  variant: string;
+  variant: TypeVarianButton;
   className?: string;
   loading?: boolean;
-  scale?: "smallest" | "biggest";
+  scale?: TypeScaleButton;
   shadow?: boolean;
 }
 
@@ -25,9 +28,10 @@ const Button: FC<Props> = ({
     <button
       {...props}
       className={clsx(
+        className,
         styles.button,
         { [styles.shadow]: shadow },
-        className,
+
         {
           primary: styles.primary,
           secondary: styles.secondary,
