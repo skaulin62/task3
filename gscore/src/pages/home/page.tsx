@@ -21,16 +21,7 @@ export default function Home() {
     setSelectedTab(index);
   };
   return (
-    <main
-      className="container"
-      style={{
-        display: "flex",
-        gap: "50px",
-        padding: "20px",
-        flexWrap: "wrap",
-        alignItems: "center",
-      }}
-    >
+    <main className="container">
       <Button variant="primary">Default</Button>
       <Button loading variant="primary">
         Default
