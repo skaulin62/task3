@@ -1,0 +1,85 @@
+@import '@/shared/assets/styles/_variables.sass'
+
+.card
+    width: auto
+    background-color: $neutral-700
+    border-radius: 12px
+    transition: transform .2s ease-in-out, background-color .2s ease-in-out
+    padding: 42px 48px
+    display: flex
+    flex-direction: column
+    align-items: center
+    color: $neutral-100
+    font-family: $ff-thicccboi
+
+    &:hover
+        background-color: $primary-1
+        transform: translateY(-50px)
+        .subtitle
+            color: $neutral-100
+        .listFeatures
+            .feature
+                .iconFeature
+                    color: $primary-1
+        .button
+            color: $primary-1
+    .price
+        font-size: $fs-54
+        line-height: $fs-66
+        font-family: $ff-dm-sans
+        margin-bottom: 4px
+        font-weight: $fw-bold
+    .title
+        text-align: center
+        font-size: $fs-24
+        line-height: $fs-26
+        margin-bottom: 8px
+        font-weight: $fw-bold
+    .subtitle
+        color: $neutral-400
+        text-align: center
+        font-size: $fs-18
+        line-height: $fs-30
+        font-weight: $fw-medium
+    .split
+        height: 1px
+        background-color: $neutral-100
+        min-width: 100%
+        margin: 40px 0px
+        border: none
+
+    .listFeatures
+        display: flex
+        flex-direction: column
+        gap: 16px
+        margin-bottom: 32px
+        align-items: flex-start
+        width: 100%
+        .feature
+            list-style: none
+            display: flex
+            flex-direction: row
+            align-items: center
+            gap: 14px
+
+            .iconFeature
+                display: flex
+                align-items: center
+                justify-content: center
+                color: $neutral-700
+                background-color: $neutral-100
+                border-radius: 50%
+                padding: 7px 6px
+                svg
+                    path
+                        stroke-width: 3.5px
+            .titleFeature
+                color: $neutral-100
+                font-family: $ff-thicccboi
+                font-size: $fs-18
+                line-height: $fs-20
+                font-weight: $fw-medium
+
+    .button
+        width: 100%
+        color: $neutral-700
