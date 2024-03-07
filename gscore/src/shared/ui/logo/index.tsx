@@ -1,3 +1,4 @@
+"use client";
 import React, { FC } from "react";
 import styles from "./styles.module.sass";
 import LogoIcon from "@/shared/assets/icons/logo.svg";

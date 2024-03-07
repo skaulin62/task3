@@ -1,8 +1,10 @@
+"use client";
 import Input from "@/shared/ui/input";
 import styles from "./styles.module.sass";
+
 import Button from "@/shared/ui/button";
 import CheckBox from "@/shared/ui/checkbox";
-import React, { ChangeEvent } from "react";
+import React from "react";
 import StatusText from "@/shared/ui/status-text";
 import Logo from "@/shared/ui/logo";
 import Accordion from "@/shared/ui/accordion";
@@ -10,7 +12,6 @@ import TabsPages from "@/shared/ui/tab-pages";
 
 import TabProgress from "@/shared/ui/tab-progress";
 import GSLink from "@/shared/ui/link";
-import Footer from "@/shared/ui/footer";
 
 export default function Home() {
   const [isChecked, setIsChecked] = React.useState(true);
@@ -114,7 +115,9 @@ export default function Home() {
         />
       </div>
       <GSLink href="/312312">My subscriptions</GSLink>
-      <Footer />
+      <GSLink variant="secondary" href="/312312">
+        My subscriptions
+      </GSLink>
     </main>
   );
 }

@@ -1,3 +1,4 @@
+"use client";
 import React, { FC } from "react";
 import styles from "./styles.module.sass";
 import Link, { LinkProps } from "next/link";
@@ -8,7 +9,7 @@ type LinkType = "primary" | "secondary";
 interface Props {
   className?: string;
   children: React.ReactNode;
-  variant?: "string";
+  variant?: string;
 }
 
 const GSLink: FC<Props & LinkProps> = ({

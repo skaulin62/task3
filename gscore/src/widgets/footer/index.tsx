@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./styles.module.sass";
 import Logo from "@/shared/ui/logo";
@@ -9,7 +10,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>
+    <footer className={styles.footer}>
       <div className="container">
         <div className={styles.description}>
           <Logo className={styles.logo} />
@@ -41,7 +42,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { FC, useEffect } from "react";
 import styles from "./styles.module.sass";
 import clsx from "clsx";

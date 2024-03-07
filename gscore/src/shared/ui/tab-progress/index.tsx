@@ -1,3 +1,4 @@
+"use client";
 import React, { FC } from "react";
 import styles from "./styles.module.sass";
 import clsx from "clsx";
