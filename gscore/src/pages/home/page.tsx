@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <main className="container">
       <Button variant="primary">Default</Button>
-      <Button loading variant="primary">
+      <Button variant="primary" scale="biggest">
         Default
       </Button>
       <Button disabled variant="primary">
@@ -60,8 +60,6 @@ export default function Home() {
       <StatusText status="Active" />
       <StatusText status="Hold" />
       <StatusText status="Inactive" />
-
-      <Logo />
 
       <Accordion title="Lorem ipsum dolor sit amet consectur">
         <span>
@@ -105,10 +103,6 @@ export default function Home() {
           ]}
         />
       </div>
-      <GSLink href="/312312">My subscriptions</GSLink>
-      <GSLink variant="secondary" href="/312312">
-        My subscriptions
-      </GSLink>
     </main>
   );
 }
