@@ -1,51 +1,11 @@
+import Payment from "@/widgets/payment";
 import React from "react";
 
 const Auth = () => {
   return (
-    <div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-      <div>dasdasd</div>
-    </div>
+    <section className="container">
+      <Payment />
+    </section>
   );
 };
 

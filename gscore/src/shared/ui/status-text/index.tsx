@@ -2,8 +2,7 @@
 import React, { FC } from "react";
 import styles from "./styles.module.sass";
 import clsx from "clsx";
-
-type Status = "Active" | "Hold" | "Inactive";
+import { Status } from "@/shared/types/types";
 
 interface Props {
   className?: string;
@@ -14,6 +13,7 @@ const StatusText: FC<Props> = ({ className, status }) => {
   return (
     <span
       className={clsx(
+        className,
         styles.status,
         {
           ["Active"]: styles.active,
