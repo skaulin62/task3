@@ -1,25 +1,45 @@
 "use client";
-import React, { FC, InputHTMLAttributes, PropsWithRef } from "react";
+import React, {
+  FC,
+  InputHTMLAttributes,
+  PropsWithRef,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from "react";
 import styles from "./styles.module.sass";
 import clsx from "clsx";
 import Success from "@/shared/assets/icons/check.svg";
 import Error from "@/shared/assets/icons/close.svg";
+import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
+import { useFirstRender } from "@/shared/hooks/use-first-render";
 
 interface Props {
   className?: string;
-  isSuccess?: boolean;
-  isError?: boolean;
-  errorMessage?: string;
-  inputProps?: PropsWithRef<InputHTMLAttributes<HTMLInputElement>>;
+  id: string;
+  errors: FieldErrors;
+  disabled?: boolean;
+  type?: string;
+  placeHolder: string;
+  required?: string;
+  dirtyFields?: any;
+  register: UseFormRegister<FieldValues>;
 }
 
 const Input: FC<Props> = ({
   className,
-  isSuccess = false,
-  errorMessage = "Error text",
-  isError = false,
-  inputProps,
+  id,
+  type,
+  register,
+  required = "Field is required!",
+  disabled,
+  placeHolder,
+  errors,
 }) => {
+  const isFirstRender = useFirstRender();
+  const isSuccess = (!isFirstRender && !errors[id]);
+  console.log(isFirstRender);
   return (
     <div className={styles.field}>
       <div
@@ -27,16 +47,20 @@ const Input: FC<Props> = ({
           className,
           styles.inputBlock,
           { [styles.success]: isSuccess },
-          { [styles.error]: isError },
-          { [styles.disabledBlock]: inputProps?.disabled }
+          { [styles.error]: errors[id] },
+          { [styles.disabledBlock]: disabled }
         )}
       >
         <input
-          {...inputProps}
-          className={clsx(styles.input, inputProps?.className)}
+          id={id}
+          type={type}
+          disabled={disabled}
+          placeholder={placeHolder}
+          className={clsx(styles.input)}
+          {...register(id, { required: "Field is required!" })}
         />
         <div className={styles.icon}>
-          {isError && (
+          {errors[id] && (
             <Error width={24} height={24} className={styles.errorIcon} />
           )}
 
@@ -47,10 +71,10 @@ const Input: FC<Props> = ({
       </div>
       <span
         className={clsx(styles.errorMessage, {
-          [styles.hideErrorMessage]: isError,
+          [styles.hideErrorMessage]: errors[id],
         })}
       >
-        {errorMessage}
+        {errors[id]?.message?.toString()}
       </span>
     </div>
   );
