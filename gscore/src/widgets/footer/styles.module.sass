@@ -19,6 +19,9 @@
             font-size: $fs-18
             line-height: $fs-30
             font-weight: $fw-medium
+        @media (max-width: $less-medium)
+            margin-bottom: 40px
+
     .bottom
         border-top: 1px solid $neutral-600
         display: flex
@@ -26,6 +29,12 @@
         align-items: center
         justify-content: space-between
         padding-top: 42px
+        @media (max-width: $less-medium)
+            flex-wrap: wrap
+            padding-top: 32px
+            justify-content: center
+            text-align: center
+            gap: 24px
         .copyright
             color: $neutral-400
             font-size: $fs-18

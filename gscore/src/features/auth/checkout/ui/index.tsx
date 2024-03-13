@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import styles from "./styles.module.sass";
 
@@ -5,14 +6,14 @@ import FormLayout from "@/shared/ui/form-layout";
 
 import Heading from "@/shared/ui/heading";
 import SubscriptionCard from "@/entities/subscriptions/ui/subscription-card";
+import { useRouter } from "next/navigation";
 
 const Checkout = ({ action }: { action?: () => void }) => {
   const [loading, setLoading] = useState(false);
-
+  const router = useRouter();
   const onSubmit = () => {
     setLoading(true);
     setTimeout(() => {
-      alert("checout");
       action && action();
       setLoading(false);
     }, 500);

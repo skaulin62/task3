@@ -1,0 +1,72 @@
+@import '@/shared/assets/styles/_variables.sass'
+
+.sidebarOverlay
+    opacity: 0
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: rgba(0,0,0, 0.5)
+    z-index: 2000
+    justify-content: flex-end
+    display: flex
+    opacity: 0
+    transition: all 0.3s ease-in-out
+    pointer-events: none
+
+    &.sidebarOpen
+        pointer-events: visible
+        opacity: 1
+
+        & .sidebar
+            transform: translateX(0)
+
+.sidebar
+    width: 70%
+    padding: 32px 24px
+    height: 100vh
+    background-color: $neutral-700
+    transform: translateX(100%)
+    transition: transform 0.2s ease-in-out
+
+    .header
+        display: flex
+        flex-direction: row
+        align-items: center
+        gap: 32px
+        margin-bottom: 48px
+        .closeSidebar
+            color: $neutral-100
+            cursor: pointer
+        .logo
+
+    .body
+        display: flex
+        flex-direction: column
+        gap: 20px
+
+        .navItem
+            font-size: $fs-16
+            font-weight: $fw-medium
+            line-height: $fs-18
+        .headerAccord
+            padding: 20px 0px
+        .contentAccord
+            margin-top: 0
+            margin-bottom: 8px
+        .accordion
+            border-bottom: 1px solid $neutral-600
+            border-top: 1px solid $neutral-600
+            background-color: $neutral-700
+            padding: 0
+            font-size: $fs-16
+            border-radius: 0
+            margin-bottom: 0
+
+            .item
+                font-size: $fs-16
+                color: $neutral-500
+                padding: 12px 0px
+                &:hover
+                    color: $neutral-100

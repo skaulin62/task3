@@ -6,7 +6,7 @@ import { SignUp } from "@/features/auth/sign-up";
 import { SignIn } from "@/features/auth/sign-in";
 import { useRouter, useSearchParams } from "next/navigation";
 import qs from "query-string";
-import { ROUTES } from "@/shared/routes/routes";
+import { ROUTES } from "@/shared/constants";
 import { Checkout } from "@/features/auth/checkout";
 const Payment = () => {
   const [step, setStep] = useState(0);
@@ -14,13 +14,7 @@ const Payment = () => {
   const router = useRouter();
 
   useEffect(() => {
-    let currentQuery = {};
-    if (params) {
-      currentQuery = qs.parse(params.toString());
-    }
-
     const updatedQuery: any = {
-      ...currentQuery,
       step: step,
     };
 
@@ -29,12 +23,20 @@ const Payment = () => {
       query: updatedQuery,
     });
     router.push(url);
-  }, [step, params, router]);
+  }, [step]);
+
+  useEffect(() => {
+    if (params?.get("step")) {
+      const value = Number(params?.get("step")) || 0;
+      if (value >= 0 && value <= 2) setStep(value);
+    }
+  }, [params]);
 
   const renderStep = () => {
     if (step === 0) return <SignUp action={() => setStep(1)} />;
     if (step === 1) return <SignIn action={() => setStep(2)} />;
-    if (step === 2) return <Checkout action={() => {}} />;
+    if (step === 2)
+      return <Checkout action={() => router.push(ROUTES.HOME_START)} />;
     return null;
   };
 

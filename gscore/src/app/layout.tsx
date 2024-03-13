@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/shared/assets/styles/globals.sass";
 import Footer from "@/widgets/footer";
 import Header from "@/widgets/header";
+import SideBar from "@/widgets/sidebar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <SideBar />
         <Header />
         <main>{children}</main>
         <Footer />

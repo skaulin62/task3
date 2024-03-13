@@ -21,8 +21,8 @@ const GSLink: FC<Props & LinkProps> = ({
   return (
     <Link
       className={clsx(
-        styles.link,
         className,
+        styles.link,
         { primary: styles.primary, secondary: styles.primary }[variant]
       )}
       {...props}

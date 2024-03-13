@@ -1,3 +1,4 @@
+"use client";
 import styles from "./styles.module.sass";
 import clsx from "clsx";
 import React, { ButtonHTMLAttributes, FC } from "react";

@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import styles from "./styles.module.sass";
 import Icon from "@/shared/ui/icon";
 import clsx from "clsx";

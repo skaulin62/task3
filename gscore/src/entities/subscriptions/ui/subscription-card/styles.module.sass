@@ -15,6 +15,10 @@
     max-width: 100%
     border-radius: 12px
     padding: 48px 0px
+
+    @media (max-width: $less-medium)
+        padding: 32px 0px
+
     .header
         display: flex
         flex-direction: row
@@ -22,24 +26,41 @@
         justify-content: space-between
         padding: 0px 0px 32px 32px
         border-bottom: 1px solid $neutral-500
+        @media (max-width: $less-medium)
+            padding: 0px 0px 24px 16px
 
         .titleOne
             color: $neutral-100
-            font-size: $fs-22
+            font-size: clamp($fs-20, calc(19.1712px + 0.221vw) ,$fs-22)
             font-weight: $fw-bold
-            line-height: $fs-28
+            line-height: clamp($fs-22, calc(19.1712px + 0.221vw) ,$fs-28)
             flex: 3.5
+            font-weight: $fw-bold
+            @media (max-width:$less-medium)
+                font-weight: $fw-semi-bold
+            @media (max-width: $small)
+                flex: 2.94
         .titleTwo
             color: $neutral-100
-            font-size: $fs-24
+            font-size: clamp($fs-22, calc(21.1712px + 0.221vw) ,$fs-24)
             font-weight: $fw-bold
             line-height: $fs-34
             flex: 3.5
+            @media (max-width: $small)
+                flex: 2.94
+
         .rightTitle
             flex: 1
-
+            font-size: clamp($fs-20, calc(19.1712px + 0.221vw) ,$fs-22)
+            font-weight: $fw-bold
+            line-height: clamp($fs-22, calc(19.1712px + 0.221vw) ,$fs-28)
+            @media (max-width:$less-medium)
+                font-weight: $fw-semi-bold
     .body
         padding: 32px 0px 0px 32px
+        @media (max-width: $less-medium)
+            padding: 24px 0px 0px 16px
+
         .wrapperBody
             display: flex
             flex-direction: row
@@ -53,17 +74,22 @@
                 gap: 12px
 
                 flex: 3.5
+                @media (max-width: $small)
+                    flex: 2.94
                 .nameInfo
                     color: $neutral-100
-                    font-size: $fs-24
+                    font-size: clamp($fs-18,calc(15.5136px + 0.663vw), $fs-24)
                     font-weight: $fw-medium
                     line-height: $fs-26
+
                 .dateInfo
                     margin-bottom: 32px
                     color: $neutral-500
                     font-size: $fs-16
                     font-weight: $fw-medium
                     line-height: $fs-18
+                    @media (max-width: $less-medium)
+                        margin-bottom: 24px
 
             .infoPrice
                 flex: 1
@@ -74,9 +100,10 @@
 
                 .price
                     color: $neutral-100
-                    font-size: $fs-24
                     font-weight: $fw-medium
-                    line-height: $fs-26
+                    font-size: clamp($fs-18,calc(15.5136px + 0.663vw), $fs-24)
+                    font-weight: $fw-medium
+                    line-height: clamp($fs-30,calc(31.6576px + -0.442vw), $fs-26)
                 .iconTrash
                     cursor: pointer
                     color: $neutral-500

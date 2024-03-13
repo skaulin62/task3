@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 type TabProps = {
   text: string;
-  onClick?: () => void;
+  onClick?: (value: number) => void;
   index: number;
 };
 
@@ -54,7 +54,7 @@ const Item = ({ text, onClick, index }: TabProps) => {
       })}
       onClick={() => {
         setActiveIndex(index);
-        if (onClick) onClick();
+        if (onClick) onClick(index);
       }}
     >
       {text}

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import styles from "./styles.module.sass";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";

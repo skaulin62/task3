@@ -11,10 +11,15 @@ body
 body
     background-color: $neutral-800
     font-family: $ff-thicccboi
+    overflow-x: hidden
+.overflow-hidden
+    overflow: hidden
 
 button, input, a, li, span
     font-family: $ff-thicccboi
 
 .container
-    max-width: 1270px
+    max-width: $large
     margin: 0 auto
+    @media (max-width: $large)
+        padding: 0px 16px

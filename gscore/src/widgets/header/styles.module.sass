@@ -12,3 +12,11 @@
             align-items: center
             flex-direction: row
             gap: 32px
+            @media (max-width: $less-medium)
+                display: none
+        .burgerMenu
+            display: none
+            cursor: pointer
+            color: $neutral-100
+            @media (max-width: $less-medium)
+                display: block

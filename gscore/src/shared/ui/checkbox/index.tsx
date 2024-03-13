@@ -1,3 +1,4 @@
+"use client";
 import React, { ChangeEvent, FC, InputHTMLAttributes } from "react";
 import styles from "./styles.module.sass";
 import Check from "@/shared/assets/icons/check.svg";
