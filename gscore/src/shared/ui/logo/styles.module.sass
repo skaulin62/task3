@@ -4,9 +4,14 @@
     display: flex
     align-items: center
     gap: 10px
+    cursor: pointer
+
+    .logoInner
+        max-width: clamp(32px, calc(27.856px + 1.105vw), 42px)
+        max-height: clamp(32px, calc(27.856px + 1.105vw), 43px)
 
     span
-        font-size: $fs-28
+        font-size: clamp($fs-18, calc(13.856px + 1.105vw),$fs-28)
         font-weight: $fw-bold
         color: $neutral-100
         text-transform: uppercase

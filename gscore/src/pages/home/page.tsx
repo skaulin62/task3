@@ -14,13 +14,13 @@ export default function Home() {
 
         <div className={styles.listLicenses}>
           <LicenceCard
-            price={117}
-            title="3 Site license"
+            price={77}
+            title="Single site license"
             actionTitle="Get Gscore"
             action={() => {}}
             subtitle="Get the advanced WordPress plugin that optimizes content with GSC keywords at one low annual price"
             features={[
-              "All features for 3 sites",
+              "Single site license",
               "Special introductory pricing",
               "Unlimited Pages and Keywords",
               "Billed annually",
@@ -42,13 +42,13 @@ export default function Home() {
             ]}
           />
           <LicenceCard
-            price={117}
-            title="3 Site license"
+            price={167}
+            title="10 Site license"
             actionTitle="Get Gscore"
             action={() => {}}
             subtitle="Get the advanced WordPress plugin that optimizes content with GSC keywords at one low annual price"
             features={[
-              "All features for 3 sites",
+              "All features for 10 sites",
               "Special introductory pricing",
               "Unlimited Pages and Keywords",
               "Billed annually",

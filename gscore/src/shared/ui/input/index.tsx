@@ -1,13 +1,5 @@
 "use client";
-import React, {
-  FC,
-  InputHTMLAttributes,
-  PropsWithRef,
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useState,
-} from "react";
+import React, { FC } from "react";
 import styles from "./styles.module.sass";
 import clsx from "clsx";
 import Success from "@/shared/assets/icons/check.svg";
@@ -38,8 +30,8 @@ const Input: FC<Props> = ({
   errors,
 }) => {
   const isFirstRender = useFirstRender();
-  const isSuccess = (!isFirstRender && !errors[id]);
-  console.log(isFirstRender);
+  const isSuccess = !isFirstRender && !errors[id];
+
   return (
     <div className={styles.field}>
       <div

@@ -1,0 +1,28 @@
+@import '@/shared/assets/styles/_variables.sass'
+
+.headingPage
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    .headingTitle
+        color: $neutral-100
+        font-size: clamp($fs-28, calc(17.2272px + 2.8729vw),$fs-54)
+        font-weight: $fw-bold
+        line-height: clamp($fs-40, calc(17.2272px + 2.8729vw), $fs-54)
+
+    .headingActions
+        display: flex
+        align-items: center
+
+        .actionMediaOne
+            display: block
+            @media (max-width: $less-medium)
+                display: none
+        .actionMediaTwo
+            display: none
+            font-size: $fs-16
+            line-height: $fs-18
+            padding: 0
+            @media (max-width: $less-medium)
+                display: block

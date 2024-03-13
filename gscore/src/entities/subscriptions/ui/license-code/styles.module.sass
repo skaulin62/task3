@@ -1,0 +1,71 @@
+@import '@/shared/assets/styles/_variables.sass'
+
+.code
+    width: 100%
+    max-width: 100%
+    background-color: $neutral-700
+    border-radius: 12px
+    padding: 24px 0px 32px 108px
+    display: flex
+    flex-direction: column
+    position: relative
+    .checkbox
+        position: absolute
+        left: 32px
+        bottom: 51px
+    .rowData
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        width: 100%
+
+        .row
+            max-width: 100%
+            .columnTitle
+                display: block
+                margin-bottom: 12px
+                color: $neutral-500
+                font-size: $fs-16
+                line-height: $fs-18
+                font-weight: $fw-bold
+        .row1
+            padding-right: 28px
+            width: calc(28px + 296px)
+            overflow: hidden
+        .row2
+            padding-right: 56px
+            width: calc(620px + 56px)
+            overflow: hidden
+            .row2Inner
+                display: flex
+                flex-direction: row
+                align-items: center
+                gap: 56px
+        .row3
+            max-width: none
+            width: 160px
+
+    @media (max-width: $less-medium)
+        padding: 86px 20px 32px 20px
+        .checkbox
+
+            left: 20px
+            top: 34px
+        .rowData
+            flex-direction: column
+            gap: 24px
+            .row
+                width: 100%
+                padding: 0
+                .statusTitle
+                    display: none
+                .statusText
+                    left: 68px
+                    top: 34px
+                    position: absolute
+            .row2
+                .row2Inner
+                    .btnActive
+                        position: absolute
+                        top: 20px
+                        right: 20px

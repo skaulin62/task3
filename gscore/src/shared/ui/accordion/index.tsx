@@ -11,6 +11,11 @@ interface Props {
   children: React.ReactNode;
   title: string;
   isActive?: boolean;
+  iconActive?: React.ReactNode;
+  iconInActive?: React.ReactNode;
+  widthIcon?: number;
+  classNameContent?: string;
+  classNameHeader?: string;
 }
 
 const Accordion: FC<Props> = ({
@@ -18,6 +23,11 @@ const Accordion: FC<Props> = ({
   children,
   title,
   isActive = false,
+  iconActive,
+  iconInActive,
+  widthIcon = 36,
+  classNameContent,
+  classNameHeader,
 }) => {
   const [active, setActive] = React.useState<boolean>(isActive);
   useEffect(() => {
@@ -25,17 +35,36 @@ const Accordion: FC<Props> = ({
   }, [isActive]);
   return (
     <div
-      className={clsx(styles.accordion, className, {
+      className={clsx(className, styles.accordion, {
         [styles.accordionActive]: active,
       })}
     >
-      <div onClick={() => setActive(!active)} className={styles.header}>
+      <div
+        onClick={() => setActive(!active)}
+        className={clsx(classNameHeader, styles.header)}
+      >
         <span className={styles.headerTitle}>{title}</span>
-        <Icon className={styles.headerIcon} width={36} height={36}>
-          {!active ? <ArrowRight /> : <ArrowDown />}
+        <Icon
+          className={styles.headerIcon}
+          width={widthIcon}
+          height={widthIcon}
+        >
+          {!active ? (
+            iconInActive ? (
+              iconInActive
+            ) : (
+              <ArrowRight />
+            )
+          ) : iconActive ? (
+            iconActive
+          ) : (
+            <ArrowDown />
+          )}
         </Icon>
       </div>
-      {active && <div className={styles.content}>{children}</div>}
+      {active && (
+        <div className={clsx(classNameContent, styles.content)}>{children}</div>
+      )}
     </div>
   );
 };

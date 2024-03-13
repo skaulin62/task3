@@ -1,0 +1,31 @@
+@import '@/shared/assets/styles/_variables.sass'
+
+.inputIcon
+    width: 100%
+    padding: 18px 24px
+    display: flex
+    flex-direction: row
+    gap: 34px
+    background-color: $neutral-600
+    border-radius: 6px
+    align-items: center
+    overflow: hidden
+    &.notIcon
+        padding: 25px 24px
+    span
+        display: block
+        flex: 1
+        color: $neutral-500
+        font-size: $fs-16
+        font-weight: $fw-medium
+        line-height: $fs-18
+        text-overflow: ellipsis
+        overflow: hidden
+        white-space: nowrap
+
+    .actionIcon
+        cursor: pointer
+        color: $neutral-100
+        transition: color 0.2s
+        &:hover
+            color: $neutral-500

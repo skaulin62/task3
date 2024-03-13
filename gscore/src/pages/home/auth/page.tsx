@@ -1,3 +1,4 @@
+"use client";
 import Payment from "@/widgets/payment";
 import React from "react";
 

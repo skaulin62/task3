@@ -1,0 +1,42 @@
+@import '@/shared/assets/styles/_variables.sass'
+
+.switchSlider
+    display: flex
+    flex-direction: row
+    gap: 12px
+    width: 100%
+    align-items: center
+    @media (max-width: $less-medium)
+        justify-content: center
+        .buttonIcon
+            display: none
+    .buttonIcon
+        padding: 13px
+        border: 1px solid $neutral-500
+        border-radius: 12px
+        background: none
+        cursor: pointer
+        color: $neutral-100
+        transition: all .1s
+        &:hover
+            border-color: $neutral-600
+            .icon
+                color: $neutral-600
+        .icon
+            transition: all .1s
+            svg
+                path
+                    stroke-width: 2
+        &:disabled
+            border-color: $neutral-600
+            color: $neutral-600
+            pointer-events: none
+
+    .currentValue
+        color: $neutral-100
+        font-size: $fs-22
+        line-height: $fs-28
+        font-weight: $fw-bold
+
+        .maxValue
+            color: $neutral-600

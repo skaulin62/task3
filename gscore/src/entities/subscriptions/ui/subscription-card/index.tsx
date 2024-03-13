@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./styles.module.sass";
 import clsx from "clsx";
@@ -11,6 +12,7 @@ type Type = "default" | "template";
 
 interface Props {
   className?: string;
+  style?: React.CSSProperties;
   data?: { name: string; active: Status; price: number; date: string };
   action?: () => void;
   actionLabel?: string;
@@ -21,6 +23,7 @@ interface Props {
 
 const SubscriptionCard: React.FC<Props> = ({
   className,
+  style,
   data,
   actionLabel,
   action,
@@ -30,6 +33,7 @@ const SubscriptionCard: React.FC<Props> = ({
 }) => {
   return (
     <div
+      style={style}
       className={clsx(
         className,
         styles.card,
@@ -83,7 +87,7 @@ const SubscriptionCard: React.FC<Props> = ({
         </div>
         {action && (
           <Button
-            disabled
+            disabled={disabled}
             className={styles.actionBtn}
             variant="secondary"
             onClick={onRemove}

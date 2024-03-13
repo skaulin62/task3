@@ -1,0 +1,19 @@
+@import '@/shared/assets/styles/_variables.sass'
+
+.blockConfirm
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-top: 48px
+    .select
+        display: block
+        font-size: $fs-20
+        line-height: $fs-22
+        font-weight: $fw-bold
+        color: $neutral-100
+
+    @media (max-width: $less-medium)
+        .select
+            display: none
+        .btnConfirm
+            width: 100%
