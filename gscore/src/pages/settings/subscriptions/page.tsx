@@ -6,6 +6,8 @@ import SliderSubscription from "@/features/subscriptions/slider-subscriptions";
 
 import ListLicenseCode from "@/widgets/list-license-code";
 import ConfirmCode from "@/widgets/confirm-code";
+import DummyState from "@/shared/ui/dummy-state";
+import { ROUTES } from "@/shared/constants";
 
 const Subcriptions = () => {
   return (
@@ -20,9 +22,13 @@ const Subcriptions = () => {
           />
 
           <SliderSubscription />
-
           <ListLicenseCode />
           <ConfirmCode />
+          {/* <DummyState
+            className={styles.dummySub}
+            actionLabel="Get GScore"
+            link={ROUTES.HOME}
+          /> */}
         </div>
       </div>
     </section>
